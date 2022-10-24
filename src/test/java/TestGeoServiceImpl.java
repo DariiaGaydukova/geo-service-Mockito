@@ -20,7 +20,6 @@ public class TestGeoServiceImpl {
         geoServiceImpl = new GeoServiceImpl();
     }
 
-
     @DisplayName("для проверки локации по ip")
     @ParameterizedTest
     @MethodSource("arguments")
@@ -29,13 +28,11 @@ public class TestGeoServiceImpl {
         Location expected = new Location("Moscow", Country.RUSSIA, "Lenina", 15);
         Location actual = geoServiceImpl.byIp(ip);
         Assertions.assertEquals(expected.getCity(), actual.getCity());
-
     }
 
 
     private static Stream<Arguments> arguments() {
         return Stream.of(Arguments.of("172.123.12.19"));
     }
-
 
 }

@@ -22,7 +22,7 @@ public class TestLocalizationServiceImpl {
         localizationServiceImpl = new LocalizationServiceImpl();
     }
 
-    @DisplayName("для проверки возвращаемого текста ")
+    @DisplayName("для проверки возвращаемого текста")
     @ParameterizedTest
     @MethodSource("arguments")
     void returnText(Country country) {
@@ -49,7 +49,6 @@ public class TestLocalizationServiceImpl {
         String result = localizationServiceImpl.locale(Country.RUSSIA);
         assertEquals(expected, result);
     }
-
 }
 
 

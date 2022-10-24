@@ -26,7 +26,6 @@ public class TestMessageSender {
     @Mock
     private LocalizationService localizationService;
 
-
     @ParameterizedTest
     @DisplayName("для проверки языка отправляемого сообщения")
     @MethodSource("arguments")
