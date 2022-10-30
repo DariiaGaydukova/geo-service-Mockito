@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestLocalizationServiceImpl {
 
     private LocalizationServiceImpl localizationServiceImpl;
+    private Country country;
 
     @BeforeEach
     public void setUp() {
@@ -38,16 +39,16 @@ public class TestLocalizationServiceImpl {
     }
 
 
-    private static Stream<Arguments> arguments() {
-        return Stream.of(Arguments.of(Country.RUSSIA));
+    @Test
+    @DisplayName("для проверки на русский текст")
+    void returnRusText() {
+        country = Country.RUSSIA;
+        Assertions.assertEquals("Добро пожаловать", localizationServiceImpl.locale(country));
     }
 
-    @Test
-    public void testByIp() {
+    private static Stream<Arguments> arguments() {
+        return Stream.of(Arguments.of(Country.RUSSIA));
 
-        String expected = "Добро пожаловать";
-        String result = localizationServiceImpl.locale(Country.RUSSIA);
-        assertEquals(expected, result);
     }
 }
 
